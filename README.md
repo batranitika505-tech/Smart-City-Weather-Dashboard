@@ -135,7 +135,7 @@ const API_KEY = "YOUR_API_KEY"
 
 ## 👨‍💻 Author
 
-Amresh Anand  
+Nitika
 CSE Student | Frontend Developer | React Learner
 
 ---
