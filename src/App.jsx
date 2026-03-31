@@ -7,7 +7,7 @@ import HeroSlider from './components/HeroSlider';
 // 🔑 CONFIGURATION
 // Replace 'YOUR_API_KEY' with your OpenWeatherMap key
 // ============================================================
-const API_KEY = 'YOUR_API_KEY_HERE'; 
+const API_KEY = '545b6c81e14f2dcd20b0a1711d62ed1a';
 const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
 
 function App() {
@@ -22,10 +22,10 @@ function App() {
   const fetchWeather = async (query) => {
     setLoading(true);
     setError(null);
-    
+
     try {
       let url = `${BASE_URL}?appid=${API_KEY}&units=metric&`;
-      
+
       // Determine if query is coordinates or city name
       if (typeof query === 'object') {
         url += `lat=${query.lat}&lon=${query.lon}`;
@@ -34,7 +34,7 @@ function App() {
       }
 
       const response = await fetch(url);
-      
+
       if (!response.ok) {
         if (response.status === 404) throw new Error("City not found. Please try again.");
         if (response.status === 401) throw new Error("Invalid API Key. Please check App.js.");
