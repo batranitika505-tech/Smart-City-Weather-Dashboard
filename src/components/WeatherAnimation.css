@@ -1,0 +1,116 @@
+.weather-animation-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* RAIN */
+.drop {
+  position: absolute;
+  width: 2px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.4);
+  bottom: 100%;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to { transform: translateY(120vh); }
+}
+
+/* LIGHTNING */
+.lightning {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: 0;
+  animation: flash 10s linear infinite;
+}
+
+@keyframes flash {
+  0% { opacity: 0; }
+  1% { opacity: 0.15; }
+  2% { opacity: 0; }
+  7% { opacity: 0; }
+  8% { opacity: 0.2; }
+  9% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* SNOW */
+.snowflake {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  filter: blur(1px);
+  top: -10px;
+  animation: fall_snow linear infinite;
+}
+
+@keyframes fall_snow {
+  to { transform: translateY(110vh) translateX(20px); }
+}
+
+/* CLOUDS */
+.cloud {
+  position: absolute;
+  width: 150px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  filter: blur(30px);
+  right: -200px;
+  animation: move_cloud linear infinite;
+}
+
+.cloud::before, .cloud::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 100px;
+  height: 100px;
+  top: -50px;
+  left: 25px;
+}
+
+.cloud::after {
+  width: 80px;
+  height: 80px;
+  top: -30px;
+  left: 60px;
+}
+
+@keyframes move_cloud {
+  to { right: 120%; }
+}
+
+/* MIST/FOG */
+.mist {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  animation: drift 20s infinite alternate linear;
+}
+
+@keyframes drift {
+  from { opacity: 0.3; transform: scale(1); }
+  to { opacity: 0.5; transform: scale(1.1); }
+}
