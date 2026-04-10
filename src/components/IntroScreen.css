@@ -259,3 +259,17 @@
   0%, 100% { opacity: 0.4; }
   50% { opacity: 0.9; }
 }
+
+/* Responsive Intro Screen */
+@media (max-width: 768px) {
+  .intro-logo h1 { font-size: 2.5rem; letter-spacing: -2px; }
+  .intro-logo-icon { font-size: 3rem; }
+  .intro-logo p { font-size: 0.75rem; }
+  .slide-content { padding: 2rem; width: 90%; }
+  .slide-city { font-size: 2rem; }
+  .slide-temp { font-size: 3rem; }
+  .slide-emoji { font-size: 4rem; margin-bottom: 0.5rem; }
+  .slide-cond { font-size: 1rem; }
+  .intro-progress { width: 80%; bottom: 60px; }
+  .intro-tagline { font-size: 0.7rem; bottom: 30px; }
+}
